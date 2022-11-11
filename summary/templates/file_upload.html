@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>File Upload</title>
+    </head>
+<body>
+    <form action="/filee" method="POST" enctype="multipart/form-data">
+        <input type="text" name="num" id="num"><br>
+        <input type="submit" value="GET"><br>
+        </form>
+        <form action="/fileu" method="POST" enctype="multipart/form-data">
+        <input type="text" name="topic" value="Topic"><br>
+        {% set number = num | int %}
+        {% for i in range(0,number) %}
+        <input type="file" name="file{{i}}"><br>
+        {% endfor %}
+        <input type="submit" value="Upload"><br>
+        {{m}}<br>
+        {{msg}}
+        
+    </form>
+</body>
+</html>

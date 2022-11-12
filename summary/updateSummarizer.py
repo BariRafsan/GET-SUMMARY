@@ -101,7 +101,7 @@ def getSummary(text):
                 else:
                     sentence_score[sent] += word_frequencies[word.text.lower()]
 
-    select_length = int(len(sentence_tokens)*0.05)
+    select_length = int(len(sentence_tokens)*0.1)
     summary  = nlargest(select_length, sentence_score,key= sentence_score.get)
     final_summary = [word.text for word in summary]
     summary = ' '.join(final_summary)
@@ -184,7 +184,7 @@ def file():             #upload files
     global num
     c='' 
     m=''
-    msg=''
+    msg=''      #msg is the summary of the text
     
       
     target = os.path.join(os.getcwd(), 'files/')
